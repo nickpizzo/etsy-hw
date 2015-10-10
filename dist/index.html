@@ -1,41 +1,48 @@
 <!DOCTYPE>
 <html>
+
 <head>
 </head>
-	<link rel="stylesheet" type="text/css" href="screen.css">
-	<title>Esty searcher</title>
+<link rel="stylesheet" type="text/css" href="screen.css">
+<title>Esty searcher</title>
 </head>
 
 <body>
-<div class="wrapper">
-	<div class="header">
-		<div class="leftHeader">
-			<div class="logo"><img src="etsy-logo.png"></div>
-			<div class="search-wrapper">
-				<form class="search-form" action="" method="">
-				  <input class="search-field" name="search" placeholder="enter Keywords" size="40" type="text">
-				  <input type="submit" name="submit" value="Search">
-				</form>
+	<div class="wrapper">
+		<div class="header">
+			<div class="leftHeader">
+				<div class="logo">
+					<img src="/styles/images/etsy-logo.png">
+				</div>
+				<div class="search-wrapper">
+					<form class="search-form" action="" method="">
+						<input class="search-field" name="search" placeholder="enter Keywords" size="40" type="text">
+						<input type="submit" name="submit" value="Search">
+					</form>
+				</div>
+				<div class="browseBut"></div>
 			</div>
-			<div class="browseBut"></div>
-		</div>
-		<div class="rightHeader">
-			<div class="rightArt">
-				<ul>
-					<li class="help">Help</li>
-					<li class="register">Register</li>
-					<li class="signIn">Sign In</li>
-					<li class="cart">Cart</li>
-				</ul>
+			<div class="rightHeader">
+				<div class="rightArt">
+					<ul>
+						<li class="help">Help</li>
+						<li class="register">Register</li>
+						<li class="signIn">Sign In</li>
+						<li class="cart">Cart</li>
+					</ul>
+				</div>
 			</div>
 		</div>
-	</div>
 		<div class="leftSideBar">
 			<ul class="rdButtons">
-				<li><input type="radio">All Items</li>
-				<li><input type="radio">Hand Made</li>
-				<li><input type="radio">Vintage</li>
-				<li><input type="radio">Craft Supplies</li>
+				<li>
+					<input type="radio">All Items</li>
+				<li>
+					<input type="radio">Hand Made</li>
+				<li>
+					<input type="radio">Vintage</li>
+				<li>
+					<input type="radio">Craft Supplies</li>
 			</ul>
 			<hr>
 			<p class="catText">Categories</p>
@@ -67,7 +74,9 @@
 			<hr>
 			<h3>Price Filter</h3>
 			<div class="pfButtons">
-				<button class="1but">$ Min</button><span> to </span><button class="2button">$ Max</button>
+				<button class="1but">$ Min</button>
+				<span> to </span>
+				<button class="2button">$ Max</button>
 			</div>
 			<hr>
 			<h3>Filter by Color</h3>
@@ -97,32 +106,38 @@
 			<div class=shipTo>Ships to <a href="#" class="shipClear">Clear</a></div>
 			<input type="text" value="United States" class="country">
 		</div>
-
-		<div class="products">
-
-		</div>
-
+		<div class = 'product'>
+</div>
+<script id="homeTemplate" type="text/template">
+	<div class='product-image'>
+		<img src='{{ Images[0].url_570xN }}' alt='{{ title }}'>
+	</div>
+	<div class='title'> {{ name }}</div>
+	<div class='vendor'> {{ Shop.shop_name }} </div>
+	<div class='price'> {{ price }} {{ currency_code }}</div>
 
 	</div>
+</script>
+</div>
 
 	<footer class="topFooter">
 		<h3 class="footerWord">Related to Product</h3>
 		<table class="prodLinks">
-		  <tr>
-		    <td>product Link 1</td>
-		    <td>product Link 2</td>
-		    <td>product Link 3</td>
-		  </tr>
-		  <tr>
-		    <td>product Link 4</td>
-		    <td>product Link 5</td>
-		    <td>product Link 6</td>
-		  </tr>
-		  <tr>
-		    <td>product Link 7</td>
-		    <td>product Link 8</td>
-		    <td>product Link 9</td>
-		  </tr>
+			<tr>
+				<td>product Link 1</td>
+				<td>product Link 2</td>
+				<td>product Link 3</td>
+			</tr>
+			<tr>
+				<td>product Link 4</td>
+				<td>product Link 5</td>
+				<td>product Link 6</td>
+			</tr>
+			<tr>
+				<td>product Link 7</td>
+				<td>product Link 8</td>
+				<td>product Link 9</td>
+			</tr>
 		</table>
 		<br>
 		<div>
@@ -146,59 +161,102 @@
 	</footer>
 
 	<footer class="bottomFooter">
-	<div class="col1">
-		<ul>
-		<li>Turn Your Passion Into a Business</li>
-		<li class="openBut"><button type="button">Open A Shop</button></li>
-		<li>Sell on Etsy</li>
-		<li><span style="color:lightblue">Seller Handbook</span></li>
-		<li><span style="color:lightblue">Etsy Credit Card Reader</span></li>
-		</ul>
-	</div>
-	<div class="col2">
-		<ul>
-		<li>Join the Community</li>
-		<li><span style="color:lightblue">Teams</span></li>
-		<li><span style="color:lightblue">Forums</span></li>
-		<li><span style="color:lightblue">Upcoming Events</span></li>
-		<li><span style="color:lightblue">Affiliates</span></li>
-		</ul>
-	</div>
-	<div class="col3">
-		<ul>
-		<li>Discover and Shop</li>
-		<li><span style="color:lightblue">Gift Cards</span></li>
-		<li><span style="color:lightblue">Blog</span></li>
-		<li><span style="color:lightblue">TasteMakers</span></li>
-		<li><span style="color:lightblue">Mobile Apps</span></li>
-		<li><span style="color:lightblue">Gift Registries</span></li>
-		<li><span style="color:lightblue">Wholesale</span></li>
-		</ul>
-	</div>
-	<div class="col4">
-		<ul>
-		<li>Get to Know Us</li>
-		<li><span style="color:lightblue">About</span></li>
-		<li><span style="color:lightblue">Careers</span></li>
-		<li><span style="color:lightblue">Press</span></li>
-		<li><span style="color:lightblue">Developers</span></li>
-		</ul>
-	</div>
-	<div class="col5">
-		<ul>
-		<li>Follow Etsy</li>
-		<li><span style="color:lightblue">Facebook</span></li>
-		<li><span style="color:lightblue">Twitter</span></li>
-		<li><span style="color:lightblue">Pinterest</span></li>
-		<li><span style="color:lightblue">Instagram</span></li>
-		</ul>
-	</div>
+		<div class="col1">
+			<ul>
+				<li>Turn Your Passion Into a Business</li>
+				<li class="openBut">
+					<button type="button">Open A Shop</button>
+				</li>
+				<li>Sell on Etsy</li>
+				<li>
+					<span style="color:lightblue">Seller Handbook</span>
+				</li>
+				<li>
+					<span style="color:lightblue">Etsy Credit Card Reader</span>
+				</li>
+			</ul>
+		</div>
+		<div class="col2">
+			<ul>
+				<li>Join the Community</li>
+				<li>
+					<span style="color:lightblue">Teams</span>
+				</li>
+				<li>
+					<span style="color:lightblue">Forums</span>
+				</li>
+				<li>
+					<span style="color:lightblue">Upcoming Events</span>
+				</li>
+				<li>
+					<span style="color:lightblue">Affiliates</span>
+				</li>
+			</ul>
+		</div>
+		<div class="col3">
+			<ul>
+				<li>Discover and Shop</li>
+				<li>
+					<span style="color:lightblue">Gift Cards</span>
+				</li>
+				<li>
+					<span style="color:lightblue">Blog</span>
+				</li>
+				<li>
+					<span style="color:lightblue">TasteMakers</span>
+				</li>
+				<li>
+					<span style="color:lightblue">Mobile Apps</span>
+				</li>
+				<li>
+					<span style="color:lightblue">Gift Registries</span>
+				</li>
+				<li>
+					<span style="color:lightblue">Wholesale</span>
+				</li>
+			</ul>
+		</div>
+		<div class="col4">
+			<ul>
+				<li>Get to Know Us</li>
+				<li>
+					<span style="color:lightblue">About</span>
+				</li>
+				<li>
+					<span style="color:lightblue">Careers</span>
+				</li>
+				<li>
+					<span style="color:lightblue">Press</span>
+				</li>
+				<li>
+					<span style="color:lightblue">Developers</span>
+				</li>
+			</ul>
+		</div>
+		<div class="col5">
+			<ul>
+				<li>Follow Etsy</li>
+				<li>
+					<span style="color:lightblue">Facebook</span>
+				</li>
+				<li>
+					<span style="color:lightblue">Twitter</span>
+				</li>
+				<li>
+					<span style="color:lightblue">Pinterest</span>
+				</li>
+				<li>
+					<span style="color:lightblue">Instagram</span>
+				</li>
+			</ul>
+		</div>
 
 
 	</footer>
 
 
-</div>
-    <script src="bundle.js" charset="utf-8"></script>
-  </body>
+	</div>
+	<script src="bundle.js" charset="utf-8"></script>
+</body>
+
 </html>
