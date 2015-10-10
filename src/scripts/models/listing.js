@@ -1,10 +1,13 @@
-import Backbone from "backbone";
+import Backbone from 'backbone';
 
-const API_ROOT = "https://openapi.etsy.com/v2/listings/active.js?api_key=aavnvygu0h5r52qes74x9zvo";
+const API_KEY = 'qemaedhuj8rhq1k8hs2kdapx';
 
 var Listing = Backbone.Model.extend({
+	url: function() {
+		return `https://openapi.etsy.com/v2/listings/${this.get('listing_id')}.js?api_key=${API_KEY}`;
+	},
+	defaults: {
 
-	url: API_ROOT
-
+	}
 });
 export default Listing;
