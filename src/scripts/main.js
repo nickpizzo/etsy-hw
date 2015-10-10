@@ -1,6 +1,8 @@
 import $ from 'jquery';
-import Router from './router';
+import Backbone from 'backbone';
+
+import Router from './router.js';
 
 $(() => {
-  let router = new Router();
-});
+  window.router = new Router();
+})

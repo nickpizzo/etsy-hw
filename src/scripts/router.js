@@ -1,27 +1,34 @@
-// the router
+import $ from 'jquery';
 import Backbone from 'backbone';
-import Listing from './models/listing.js';
-import HomeView from './views/homeView.js';
 
+import { Listing, ActiveListings } from './models.js';
 
-var Router = Backbone.Router.extend({
-	routes: {
-		'' : 'showHome',
-		'details/:id' : 'showDetails',
-	},
+import ActiveListingsView from './views/activeListingsView.js';
+import ListingDetailsView from './views/listingDetailsView.js';
 
-	initialize: function() {
-		Backbone.history.start();
-	},
-
-	showHome: function() {
-		let listing = new Listing();
-		let homeView = new HomeView({ model: listing });
-		homeView.render();
-	},
-
-	showDetails: function(listingId) {
-		console.log('showDetails');
+class Router extends Backbone.Router {
+	get routes() {
+		return {
+			'' : 'showActive',
+			'details/:id' : 'showDetails'
+		};
 	}
-});
+
+	initialize() {
+    Backbone.history.start();
+		// "this" is the Router
+	}
+
+	showActive() {
+
+    const activeListingsView = new ActiveListingsView({
+			collection: this.activeListings
+		});
+	}
+
+	showDetails(listingId) {
+
+	}
+};
+
 export default Router;
