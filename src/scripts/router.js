@@ -20,9 +20,23 @@ class Router extends Backbone.Router {
 	}
 
 	showActive() {
+		this.activeListings = new ActiveListings();
 
-    const activeListingsView = new ActiveListingsView({
+		const activeListingsView = new ActiveListingsView({
 			collection: this.activeListings
+		});
+
+		this.activeListings.fetch({
+			success: function() {
+				console.log('things are good!');
+				$('#product').html(activeListingsView.render());
+			},
+			error: function() {
+				console.log('things are bad!');
+			},
+			complete: function(xhr, textStatus) {
+        console.log(textStatus);
+      }
 		});
 	}
 

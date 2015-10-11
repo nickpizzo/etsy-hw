@@ -7,14 +7,17 @@ _.templateSettings = {
   interpolate: /\{\{(.+?)\}\}/g
 };
 
-export class ListingView extends Backbone.View {
+class ListingView extends Backbone.View {
 	get template() {
-    return _.template($("#homeTemplate").text());
+    return _.template($("#listingTemplate").text());
   }
 
-  render() {
-    console.log('are we getting here 2?');
-    this.$el.html(this.template(this.model.serialize()));
+  render() { //this is as deep as our code currently goes
+    console.log('are we getting here 2?'); //holy shit we actually got here!
+    //this.$el.html(this.template(this.model.serialize()); //I dont understand this code
+    console.log(this.model.serialize()); //why not a function????
     return this.$el;
   }
 };
+
+export default ListingView;

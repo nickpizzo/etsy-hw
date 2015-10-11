@@ -1,5 +1,6 @@
+import $ from 'jquery';
 import Backbone from 'backbone';
-import ActiveListings from '../models.js';
+import { Listing, ActiveListings } from '../models.js';
 import ListingView from './listingView.js';
 
 class ActiveListingsView extends Backbone.View {
@@ -12,10 +13,7 @@ class ActiveListingsView extends Backbone.View {
     return this.$el;
   }
   initialize() {
-    this.activeListings = new ActiveListings();
-    this.activeListings.fetch().then(() => {
-			$('#product').html(activeListingsView.render());
-		});
+    console.log('activeListingsView initialized!');
   }
 }
 
