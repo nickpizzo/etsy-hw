@@ -16,11 +16,10 @@ class Router extends Backbone.Router {
 
 	initialize() {
     Backbone.history.start();
-		// "this" is the Router
 	}
 
 	showActive() {
-		this.activeListings = new ActiveListings();
+    this.activeListings = new ActiveListings();
 
 		const activeListingsView = new ActiveListingsView({
 			collection: this.activeListings
